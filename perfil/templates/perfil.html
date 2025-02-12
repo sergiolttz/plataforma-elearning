@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+</head>
+
+<body>
+    <div id="cuadro_grande">
+        <center>
+            <video autoplay muted loop>
+                <source id="escena" src="{% static 'Fondo_Azul_Oscuro_2.mp4' %}">
+            </video>
+
+            <form action="/inicio/login_registro/" method="POST">
+                {% csrf_token %}
+                <input id="entrada" name="entrada" type="text">
+                <button id="registrar_ingresar" type="submit">Registrar / Ingresar</button>
+            </form>
+
+            <button id="empezar">Iniciar</button>
+        </center>
+    </div>
+    <div id="footer">
+        <center>
+            <img src="{% static 'icono.jpg' %}" id="icono">
+
+        </center>
+    </div>
+
+</html>
